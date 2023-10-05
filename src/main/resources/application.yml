@@ -1,0 +1,29 @@
+# SpringBoot
+spring:
+  application:
+    name: TodoAppMVC
+  datasource:
+    url: jdbc:mysql://localhost/apirest08_task?useSSL=false&serverTimeZone=UTC
+    username: root
+    password:
+
+  # JPA
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+# Documentation SpringDoc
+springdoc:
+  # Habilitar y deshabilitar api-doc - swagger-ui
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /doc/swagger-ui.html
+  packages-to-scan: com.horacioing.todoappmvc.controllers
+  paths-to-match: /task/**
